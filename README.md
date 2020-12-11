@@ -1,6 +1,6 @@
 # Exams Grading and Evaluation Application
 ## :arrow_forward: Getting Start
-### 1. How to run the code
+### 1. How to run the code?
 - Clone repository:
 ```bash
 git clone https://github.com/dinhcuongece/Exams-Grading-and-Evaluation-App
@@ -17,5 +17,7 @@ There are two modes in scanning images: by capturing frames from webcam and by I
 
 -- To scanning using Input folder, put the images you need to scan into the `Input` folder and change `webCamFeed` into `False`
 
-### :heavy_exclamation_mark: 2. Note
+###:heavy_exclamation_mark: 2. Note!
+- Source code can use mobile phone camera as a webcam for scanning
+
 
