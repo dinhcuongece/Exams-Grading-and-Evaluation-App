@@ -1,4 +1,5 @@
 
+## color+opacity
 """""""""""""""
 ##### color+opacity
 'import cv2
@@ -15,8 +16,10 @@ alpha = 1  # Transparency factor.
 # Following line overlays transparent rectangle over the image
 image_new = cv2.addWeighted(overlay, alpha, image, 1 - alpha, 0)
 cv2.imshow("test",image_new)
-cv2.waitKey(0) """ ##### color+opacity
+cv2.waitKey(0) """
+#
 
+## Mask a logo
 """"## Mask a logo
 # Load two images
 img1 = cv2.imread('messi5.jpg')
@@ -44,12 +47,14 @@ img1[0:rows, 0:cols ] = dst
 cv2.imshow('res',img1)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-""" ## Mask a logo
+"""
 """
 
 """
 
-"""
+
+##IP camera Indian guy
+""" 
 import numpy as np
 import cv2
 address="http://192.168.1.229:4747" # Phone IP Addresss
@@ -73,6 +78,10 @@ while(True):
 cap.release()
 cv2.destroyAllWindows()
 """
+#
+
+## IP camera cv2 forum
+"""
 import numpy as np
 import cv2
 address="http://192.168.1.229:4747/video" # Phone IP Addresss
@@ -94,3 +103,4 @@ while True:
     cv2.imshow("win", image)
     k = cv2.waitKey(1) & 0xff
     if k == 27 : break # Esc pressed
+"""
