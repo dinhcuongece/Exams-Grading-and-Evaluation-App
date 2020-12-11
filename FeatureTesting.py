@@ -1,3 +1,4 @@
+
 """""""""""""""
 ##### color+opacity
 'import cv2
@@ -14,8 +15,9 @@ alpha = 1  # Transparency factor.
 # Following line overlays transparent rectangle over the image
 image_new = cv2.addWeighted(overlay, alpha, image, 1 - alpha, 0)
 cv2.imshow("test",image_new)
-cv2.waitKey(0) """
-## Mask a logo
+cv2.waitKey(0) """ ##### color+opacity
+
+""""## Mask a logo
 # Load two images
 img1 = cv2.imread('messi5.jpg')
 img2 = cv2.imread('opencv_logo.png')
@@ -42,3 +44,53 @@ img1[0:rows, 0:cols ] = dst
 cv2.imshow('res',img1)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+""" ## Mask a logo
+"""
+
+"""
+
+"""
+import numpy as np
+import cv2
+address="http://192.168.1.229:4747" # Phone IP Addresss
+cap = cv2.VideoCapture(address)
+
+#cap.open()
+
+while(True):
+    # Capture frame-by-frame
+    ret, frame = cap.read()
+
+    # Our operations on the frame come here
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+    # Display the resulting frame
+    cv2.imshow('frame',gray)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+# When everything done, release the capture
+cap.release()
+cv2.destroyAllWindows()
+"""
+import numpy as np
+import cv2
+address="http://192.168.1.229:4747/video" # Phone IP Addresss
+cv2.namedWindow("win")
+
+camera = cv2.VideoCapture(0)
+camera.open(address)
+
+
+print("acess")
+
+while True:
+    print('access1')
+    ok, image = camera.read()
+    print("image",image)
+    if not ok:
+        print( 'no image read')
+        break
+    cv2.imshow("win", image)
+    k = cv2.waitKey(1) & 0xff
+    if k == 27 : break # Esc pressed
