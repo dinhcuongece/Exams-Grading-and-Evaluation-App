@@ -23,7 +23,7 @@ ans= [1,2,0,0,4]
 
 count=0
 while True:
-#while True: #for video capture
+
     #PREPROCESSING
     if webCamFeed:success, img = cap.read() #Capture image from video
     else:img = cv2.imread(InputPath)     #Cap from pathImage

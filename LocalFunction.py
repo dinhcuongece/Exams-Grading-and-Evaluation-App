@@ -74,7 +74,7 @@ def getCornerPoints(cont):
     approx = cv2.approxPolyDP(cont, 0.02 * peri, True) # APPROXIMATE THE POLY TO GET CORNER POINTS
     return approx
 
-def splitBoxes(img):
+def splitBoxes(img): ##TODO: Try spliting box by circle
     rows = np.vsplit(img,5)
     boxes=[]
     for r in rows:
