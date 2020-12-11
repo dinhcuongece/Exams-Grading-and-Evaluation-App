@@ -6,11 +6,12 @@ import os
 
 ########################################################################
 #DECLAARATION
-webCamFeed = False
+webCamFeed = True
 InputPath = "Input/im00.jpg"
 OutputPath= "Output/"
-address="http://192.168.1.226:4747/video" # Phone IP Addresss
+address="http://192.168.1.229:4747/video" # Phone IP Addresss
 cap = cv2.VideoCapture(0)
+#cap.open(address) #Used for IP PHone camera
 cap.set(10,160)
 heightImg = 700 #Resized resolution
 widthImg  = 700
@@ -19,7 +20,12 @@ choices=5
 ans= [1,2,0,0,4]
 
 ########################################################################
-
+#TODO: Challenge and future work
+# 1. Save grade to csv funtion
+# 2. AR function, button on paper
+# 3. (optional) Student need to know wrong answers, teacher and parents need feedback.
+# System for student and teacher to check grade and feedback
+# 4. Get roi name and ID
 
 count=0
 while True:
@@ -66,7 +72,7 @@ while True:
 
             # APPLY THRESHOLD
             imgWarpGray = cv2.cvtColor(imgWarpColored,cv2.COLOR_BGR2GRAY) # CONVERT TO GRAYSCALE
-            imgThresh = cv2.threshold(imgWarpGray, 170, 255,cv2.THRESH_BINARY_INV )[1] # APPLY THRESHOLD AND INVERSE
+            imgThresh = cv2.threshold(imgWarpGray, 200, 255,cv2.THRESH_BINARY_INV )[1] # APPLY THRESHOLD AND INVERSE
 
             boxes = LocalFunction.splitBoxes(imgThresh) # GET INDIVIDUAL BOXES
             #cv2.imshow("Split Test ", boxes[3])   #test get box
