@@ -16,4 +16,4 @@ There are two modes in scanning images: by capturing frames from webcam and by I
 -- To scanning using webcam, simply change `webCamFeed` into `True`
 
 -- To scanning using Input folder, put the images you need to scan into the `Input` folder and change `webCamFeed` into `False`
-### 2. Note
+### :heavy_exclamation_mark: 2. Note
